@@ -38,23 +38,23 @@ function Gameobject (character){
 
 function CharacterStats (character){
   Gameobject.call(this, character)
-  this.healthpoints = character.healthpoints
+  this.healthPoints = character.healthPoints;
   
 }
 
 //inherited prototype
-CharacterStats.prototype=Object.create(Gameobject.prototype)
+  CharacterStats.prototype=Object.create(Gameobject.prototype)
 
 //prototype
   CharacterStats.prototype.takeDamage = function () {
     return `${this.name} took damage.`
   }
   
-  CharacterStats.prototype.destroy = function () {
-    return `${this.name} was removed from the game.`
-  }
-//gets back its prototypes
-  CharacterStats.prototype.constructor=CharacterStats
+ 
+
+
+  //gets back its prototypes
+  // CharacterStats.prototype.constructor=CharacterStats
 
 
 
@@ -73,7 +73,7 @@ CharacterStats.prototype=Object.create(Gameobject.prototype)
 function Humanoid (character){
   
   CharacterStats.call(this, character)
-  this.team = character.healthpoints,
+  this.team = character.team,
   this.weapons = character.weapons,
   this.language = character.language
 }
@@ -81,21 +81,13 @@ function Humanoid (character){
 // inherited 
 Humanoid.prototype=Object.create(CharacterStats.prototype)
 
-
+//protoypes
 
   Humanoid.prototype.greet = function () {
     return `${this.name} offers a greeting in ${this.language}.`
   }
 
-
-  
-  Gameobject.prototype.destroy = function () {
-    return `${this.name} was removed from the game.`
-  }
-  Humanoid.prototype.takeDamage = function () {
-    return `${this.name} took damage.`
-  }
-  Humanoid.prototype.constructor=Humanoid
+ 
 
 
 

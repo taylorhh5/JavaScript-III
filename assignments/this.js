@@ -1,10 +1,11 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. 
-* 2. 
-* 3. 
-* 4. 
+* 1. The function is called in the global scope.
+* 2. The function is called as a method.
+* 3. In a constructor function it refers a specific instance of the object using the new keyword.
+  4. The function is called by .call or .apply.
+*  
 *
 * write out a code example of each explanation above
 */
