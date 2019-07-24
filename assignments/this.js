@@ -12,15 +12,53 @@
 // Principle 1
 
 // code example for Window Binding
+function sayYear(year) {
+    console.log(this);
+    return year;
+  }
+  console.log (sayYear("2019"));
 
 // Principle 2
 
 // code example for Implicit Binding
 
+const myObj = {
+    greeting: 'Hi,',
+    myState: function(state) {
+      console.log(`${this.greeting} the state I live in is ${state}`);
+      console.log(this);
+    }
+  };
+  myObj.myState('Virginia');
+
 // Principle 3
 
 // code example for New Binding
 
+function food (favorite){
+      this.food = favorite;
+     }
+    
+     let myFavoriteFood = new food('Mexican');
+     let leastFavorite = new food ('sushi');
+    
+    console.log(`My favorite food is ${myFavoriteFood.food}`);
+    console.log(`My least food is ${leastFavorite.food}`);
+
 // Principle 4
+
+
+
+function dog(){
+console.log(this.bark);
+ }
+
+const myDog = {
+   name: 'Fred',
+   bark: 'Ruff!',
+ }
+
+ dog.call(myDog); 
+
 
 // code example for Explicit Binding
